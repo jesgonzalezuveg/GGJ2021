@@ -12,16 +12,25 @@ public class getVolumenHexagono : MonoBehaviour {
     public Transform lado1;
     public Transform lado2;
 
-    [Header("Objeto padre de puntos")]
+    [Header("Elementos importantes")]
     public GameObject puntosClave;
+    public GameObject padreParedes;
     private Transform[] puntosArray;
 
     [Header("Objetos a instanciar")]
     public GameObject[] objetos;
+    public GameObject personaje;
+    public camaraPersonaje camara;
+
+    private bool personajeHasSpawn = false;
 
 
     // Start is called before the first frame update
     void Start() {
+
+        foreach (Collider pared in padreParedes.GetComponentsInChildren<Collider>()) {
+            pared.enabled = false;
+        }
 
         float altura = Vector2.Distance(new Vector2(0, posApotema.position.y), new Vector2(0, posBase.position.y));
         float apotema = Vector2.Distance(new Vector2(posApotema.position.x, 0), new Vector2(posBase.position.x, 0));
@@ -29,6 +38,9 @@ public class getVolumenHexagono : MonoBehaviour {
 
         puntosArray = puntosClave.GetComponentsInChildren<Transform>();
         var objetosFigura = new GameObject("Objetos figura");
+
+        int filaSpawnPlayer = Random.Range(1, Mathf.RoundToInt(altura));
+
         for (int fila = 1; fila <= Mathf.RoundToInt(altura) ; fila++) {
             var objetosFila = new GameObject("ObjetosFila" + fila);
             objetosFila.transform.SetParent(objetosFigura.transform);
@@ -36,8 +48,20 @@ public class getVolumenHexagono : MonoBehaviour {
 
             pintaMesh(objetosFila);
 
+            int plataformaSpawnPlayer = Random.Range(0,9);
+
             for (int i = 0; i < 10; i++) {
-                cosaNueva(objetosFila);
+                GameObject plataforma = null;
+
+                while (plataforma == null) {
+                    plataforma = cosaNueva(objetosFila);
+                }
+
+                if (filaSpawnPlayer == fila && plataformaSpawnPlayer == i) {
+                    var personajeGO = Instantiate(personaje, plataforma.transform.position + new Vector3(0,0.2f,0),Quaternion.identity);
+                    personajeGO.GetComponent<primeraPersona>().cameraTransform = camara.transform;
+                    camara.target = personajeGO.transform;
+                }
             }
 
             var objetosFila2 = new GameObject("ObjetosFilaSubida" + fila);
@@ -47,13 +71,17 @@ public class getVolumenHexagono : MonoBehaviour {
             pintaMesh(objetosFila2);
 
             for (int i = 0; i < 5; i++) {
-                cosaNueva(objetosFila2);
+                var plataforma = cosaNueva(objetosFila2);
             }
 
             puntosClave.transform.position += new Vector3(0, 1, 0);
 
             objetosFila.GetComponent<Collider>().enabled = false;
             objetosFila2.GetComponent<Collider>().enabled = false;
+        }
+
+        foreach (Collider pared in padreParedes.GetComponentsInChildren<Collider>()) {
+            pared.enabled = true;
         }
     }
 
@@ -92,7 +120,7 @@ public class getVolumenHexagono : MonoBehaviour {
         filter.mesh = msh;
     }
 
-    void cosaNueva(GameObject objeto) {
+    GameObject cosaNueva(GameObject objeto) {
         var bordesObjeto = objeto.GetComponent<Collider>().bounds;
 
         Vector3 randomPoint = new Vector3(Mathf.RoundToInt(Random.Range(bordesObjeto.min.x, bordesObjeto.max.x)), 100, Mathf.RoundToInt(Random.Range(bordesObjeto.min.z,bordesObjeto.max.z)));
@@ -102,7 +130,10 @@ public class getVolumenHexagono : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 1000)) {
             GameObject newObj = Instantiate(objetos[Random.Range(0, objetos.Length)], new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), Quaternion.identity); //spawn & parent
             newObj.transform.SetParent(objeto.transform);
+
+            return newObj;
         }
+        return null;
     }
 
 

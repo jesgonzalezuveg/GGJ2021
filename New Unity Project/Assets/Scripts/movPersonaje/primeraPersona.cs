@@ -109,6 +109,7 @@ public class primeraPersona : MonoBehaviour{
                 fallVelocity.y = Mathf.Sqrt(jumpSpeed * -4 * gravity);
             }
         }
+
         fallVelocity.y += gravity * Time.deltaTime *4;
         playerController.Move(fallVelocity * Time.deltaTime);
         if (fallVelocity.y<-20)

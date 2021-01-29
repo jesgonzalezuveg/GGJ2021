@@ -7,8 +7,10 @@ public class vida : MonoBehaviour
     public int salud = 5; 
     public CharacterController player;
     public GameObject gameOver;
+
     private void Start() 
     {
+        gameOver = GameObject.Find("GameOver");
         player = gameObject.GetComponent<CharacterController>(); 
         gameOver.SetActive(false);
     }

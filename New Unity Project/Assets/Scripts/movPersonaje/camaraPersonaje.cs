@@ -9,15 +9,17 @@ public class camaraPersonaje : MonoBehaviour
     public Vector3 offset;
     public Transform target;
     [Range (1, 2)]public float sensibilidad;
-    private void Start()
-    {
-        target = GameObject.Find("Player").transform;
-    }
 
     void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, target.position + offset, lerpValue);
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensibilidad, Vector3.up)* offset;
         transform.LookAt(target);
+
+
+        if (target) {
+            Debug.Log("Player visible: " + target.GetComponentInChildren<Renderer>().isVisible);
+        }
+
     }
 }
