@@ -18,7 +18,7 @@ public class getVolumenHexagono : MonoBehaviour {
     private Transform[] puntosArray;
 
     [Header("Objetos a instanciar")]
-    public GameObject[] objetos;
+    public plataformasEstruc[] objetos;
     public GameObject personaje;
     public camaraPersonaje camara;
 
@@ -127,14 +127,20 @@ public class getVolumenHexagono : MonoBehaviour {
         RaycastHit hit;
         Ray ray = new Ray(randomPoint, Vector3.down);
 
+        var randomObj = objetos[Random.Range(0, objetos.Length)];
+
+        Debug.Log(Physics.CheckSphere(randomPoint, randomObj.dimension.x));
+
         if (Physics.Raycast(ray, out hit, 1000)) {
-            GameObject newObj = Instantiate(objetos[Random.Range(0, objetos.Length)], new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), Quaternion.identity); //spawn & parent
+            GameObject newObj = Instantiate(randomObj.prefab, new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), Quaternion.identity); //spawn & parent
             newObj.transform.SetParent(objeto.transform);
 
             return newObj;
         }
         return null;
     }
+
+
 
 
 
