@@ -22,7 +22,7 @@ public class getVolumenHexagono : MonoBehaviour {
     public GameObject personaje;
     public camaraPersonaje camara;
 
-    private bool personajeHasSpawn = false;
+    private GameObject personajeGO;
 
 
     // Start is called before the first frame update
@@ -58,7 +58,7 @@ public class getVolumenHexagono : MonoBehaviour {
                 }
 
                 if (filaSpawnPlayer == fila && plataformaSpawnPlayer == i) {
-                    var personajeGO = Instantiate(personaje, plataforma.transform.position + new Vector3(0,0.2f,0),Quaternion.identity);
+                    personajeGO = Instantiate(personaje, plataforma.transform.position + new Vector3(0,0.2f,0),Quaternion.identity);
                     personajeGO.GetComponent<primeraPersona>().cameraTransform = camara.transform;
                     camara.target = personajeGO.transform;
                 }
