@@ -1,14 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:project/Assets/Modelados/Texturas.meta
-guid: adb2421895c2c324cb759fd51c312c39
+guid: c426d3a22ab3fdb46be3cd26207c986a
 folderAsset: yes
 DefaultImporter:
-=======
-guid: 2526dbebb244b2a4f9223d390b5fdc81
-NativeFormatImporter:
->>>>>>> c2ce4652221a5bd183c44765710a24d3a2b3897c:project/Assets/generador/plataformas/Space.mat.meta
   externalObjects: {}
-  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
