@@ -42,11 +42,11 @@ public class primeraPersona : MonoBehaviour{
     
     public Vector3 fallVelocity;
     [HideInInspector]
-    //public Animator animatorPlayer;
+    public Animator animatorPlayer;
 
     public void Awake() {
         playerController = gameObject.GetComponent<CharacterController>();
-        //animatorPlayer = gameObject.GetComponentInChildren<Animator>();
+        animatorPlayer = gameObject.GetComponentInChildren<Animator>();
 
     }
 
@@ -67,7 +67,7 @@ public class primeraPersona : MonoBehaviour{
         if (direction.magnitude >= 0.1) 
         {
             //CAMINAR
-            //animatorPlayer.SetBool("isWalking", true);
+            animatorPlayer.SetBool("isRunning", true);
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothTimeVelocity, smoothTime);        
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -86,25 +86,20 @@ public class primeraPersona : MonoBehaviour{
         //IDLE
         }else
         {
-            //animatorPlayer.SetBool("isWalking", false);     
+            animatorPlayer.SetBool("isRunning", false);     
         }
         
-        if(isGrounded)
-        {
+        if(isGrounded){
             saltoTierra = true;
-            //animatorPlayer.SetBool("isJumping", false);
-        }else
-        {
-            //animatorPlayer.SetBool("isFalling", false);
+            animatorPlayer.SetBool("isJumping", false);
         }
-
 
         //SALTAR
         if (Input.GetKey("space")) {
             
             if(saltoTierra) 
             {
-                //animatorPlayer.SetBool("isJumping", true);    
+                animatorPlayer.SetBool("isJumping", true);    
                 saltoTierra = false;                            
                 fallVelocity.y = Mathf.Sqrt(jumpSpeed * -4 * gravity);
             }
