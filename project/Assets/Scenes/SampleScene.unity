@@ -138,9 +138,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.61
       objectReference: {fileID: 0}
+    - target: {fileID: 3722141277552952205, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8406037593363516200, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406037593363516200, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406037593363516200, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406037593363516200, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8406037593363516200, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,9 +202,17 @@ PrefabInstance:
       propertyPath: camara
       value: 
       objectReference: {fileID: 1232936873}
+    - target: {fileID: 8406037593363516201, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: personaje
+      value: 
+      objectReference: {fileID: 5300960154767745251, guid: b1c62efca5f252c4384439129db28cf4, type: 3}
     - target: {fileID: 8406037593363516206, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
       propertyPath: m_Name
       value: HexagonGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406037593363516206, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
@@ -503,9 +527,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5920699996522219133, guid: 3fbda28210d805a4bba02993b4af24ad, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920699996522219133, guid: 3fbda28210d805a4bba02993b4af24ad, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920699996522219133, guid: 3fbda28210d805a4bba02993b4af24ad, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920699996522219133, guid: 3fbda28210d805a4bba02993b4af24ad, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5920699996522219134, guid: 3fbda28210d805a4bba02993b4af24ad, type: 3}
       propertyPath: m_Name
       value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920699996522219135, guid: 3fbda28210d805a4bba02993b4af24ad, type: 3}
+      propertyPath: target
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fbda28210d805a4bba02993b4af24ad, type: 3}

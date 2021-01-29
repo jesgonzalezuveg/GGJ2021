@@ -50,7 +50,8 @@ public class getVolumenHexagono : MonoBehaviour {
 
             int plataformaSpawnPlayer = Random.Range(0,9);
 
-            for (int i = 0; i < 10; i++) {
+
+            for (int i = 0; i < altura; i++) {
                 GameObject plataforma = null;
 
                 while (plataforma == null) {
