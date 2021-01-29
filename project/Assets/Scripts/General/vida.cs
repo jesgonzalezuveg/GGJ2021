@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class vida : MonoBehaviour
 {
+    public float timerTrampa;
+    public float tiempoDano=0;
     public int salud = 5; 
     public CharacterController player;
     public GameObject gameOver;
-
     private void Start() 
     {
-        gameOver = GameObject.Find("GameOver");
+        
         player = gameObject.GetComponent<CharacterController>(); 
         gameOver.SetActive(false);
     }
@@ -21,12 +22,39 @@ public class vida : MonoBehaviour
             gameOver.SetActive(true);
         }
     }
-    private void OnTriggerEnter(Collider objeto) 
+    private void OnTriggerStay(Collider objeto) 
     {
         if (objeto.tag=="trampa")
         {
-            salud = salud- 1;
+            reloj();
         }
+    }
+    private void OnTriggerEnter(Collider objeto) 
+    {
+        timerTrampa=Random.Range(0.5f, 3f);
+    }
+    private void OnTriggerExit(Collider objeto) 
+    {
+        
+    }
+    void reloj()
+    {
+        if(timerTrampa<=3&&timerTrampa>=0)
+        {
+            timerTrampa-=Time.deltaTime;   
+        }  
+        if(timerTrampa<0)
+        {
+            if(Time.time>=tiempoDano){
+            salud=salud-1;
+            tiempoDano=Time.time+3;
+        }
+        }   
+        if(timerTrampa<-1)
+        {
+            timerTrampa=4;
+        }  
+        
     }
     
 }
