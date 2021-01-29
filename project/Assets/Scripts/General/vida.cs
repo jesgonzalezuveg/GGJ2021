@@ -31,12 +31,13 @@ public class vida : MonoBehaviour
     }
     private void OnTriggerEnter(Collider objeto) 
     {
-        timerTrampa=Random.Range(0.5f, 3f);
+        timerTrampa=3;
     }
     private void OnTriggerExit(Collider objeto) 
     {
-        
+        timerTrampa=3;
     }
+    //CONTADORTRAMPA
     void reloj()
     {
         if(timerTrampa<=3&&timerTrampa>=0)
