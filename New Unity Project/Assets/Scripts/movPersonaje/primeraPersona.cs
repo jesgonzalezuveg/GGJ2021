@@ -39,8 +39,8 @@ public class primeraPersona : MonoBehaviour{
     bool isGrounded;
     [HideInInspector]
     public CharacterController playerController;
-    [HideInInspector]
-    Vector3 fallVelocity;
+    
+    public Vector3 fallVelocity;
     [HideInInspector]
     //public Animator animatorPlayer;
 
@@ -111,6 +111,10 @@ public class primeraPersona : MonoBehaviour{
         }
         fallVelocity.y += gravity * Time.deltaTime *4;
         playerController.Move(fallVelocity * Time.deltaTime);
+        if (fallVelocity.y<-20)
+        {
+            fallVelocity.y = 0;
+        }
     }
 }
 
