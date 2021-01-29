@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8964487237644108227}
   - component: {fileID: 6169305445262864639}
   m_Layer: 8
-  m_Name: Cube 1
+  m_Name: llamas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0fae86fe4e1cd24eaa7bc1baa07fa1b, type: 2}
+  - {fileID: 2100000, guid: c5c32e9797219c84498d8727d0243dd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
