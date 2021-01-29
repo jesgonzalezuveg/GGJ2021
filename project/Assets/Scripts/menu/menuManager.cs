@@ -10,13 +10,11 @@ public class menuManager : MonoBehaviour
     public GameObject transicion;
     public GameObject creditos;
     public GameObject botonesMenu;
-    public GameObject configMenu;
 
     private void Awake() {
         transicion.gameObject.SetActive(false);
         creditos.SetActive(false);
         botonesMenu.SetActive(true);        
-        configMenu.SetActive(false);
     }
     
     public void playBtn(){
@@ -30,9 +28,14 @@ public class menuManager : MonoBehaviour
     public void irCreditos()
     {
         creditos.SetActive(true);
-        configMenu.SetActive(false);
         botonesMenu.SetActive(false);
     }
+    public void quitBtn()
+    {
+        Application.Quit();
+    }
+
+
     IEnumerator cargarNivelEnum(){
         yield return new WaitForSeconds(5);
         SceneManager.LoadSceneAsync(cambioEscena);
