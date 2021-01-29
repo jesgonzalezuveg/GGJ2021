@@ -206,6 +206,14 @@ PrefabInstance:
       propertyPath: personaje
       value: 
       objectReference: {fileID: 5300960154767745251, guid: b1c62efca5f252c4384439129db28cf4, type: 3}
+    - target: {fileID: 8406037593363516201, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: objetos.Array.data[0]
+      value: 
+      objectReference: {fileID: 7792208927576097832, guid: f633f9d7affee514aa95c01126eac63e, type: 3}
+    - target: {fileID: 8406037593363516201, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
+      propertyPath: objetos.Array.data[1]
+      value: 
+      objectReference: {fileID: 3038881423427491938, guid: e9c17023344645e4c8ed4de5027d2ea3, type: 3}
     - target: {fileID: 8406037593363516206, guid: a65577ced2b736449b167fb1019dbc47, type: 3}
       propertyPath: m_Name
       value: HexagonGenerator
