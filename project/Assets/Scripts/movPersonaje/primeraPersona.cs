@@ -52,7 +52,7 @@ public class primeraPersona : MonoBehaviour{
 
     public void Update() 
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckBox(groundCheck.position, new Vector3(0.2f, groundDistance,0.2f), Quaternion.identity,groundMask);
 
         if (isGrounded && fallVelocity.y < 0f) 
         {
@@ -92,6 +92,10 @@ public class primeraPersona : MonoBehaviour{
         if(isGrounded){
             saltoTierra = true;
             animatorPlayer.SetBool("isJumping", false);
+            animatorPlayer.SetBool("isFalling", false);
+        } else {
+            animatorPlayer.SetBool("isJumping", false);
+            animatorPlayer.SetBool("isFalling", true);
         }
 
         //SALTAR
@@ -107,10 +111,14 @@ public class primeraPersona : MonoBehaviour{
 
         fallVelocity.y += gravity * Time.deltaTime *4;
         playerController.Move(fallVelocity * Time.deltaTime);
-        if (fallVelocity.y<-20)
-        {
-            fallVelocity.y = 0;
-        }
+        //if (fallVelocity.y<-20){
+        //    fallVelocity.y = 0;
+        //}
+    }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(groundCheck.position, new Vector3(0.5f, groundDistance, 0.5f));
     }
 }
 

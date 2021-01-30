@@ -262,8 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothTime: 0.1
-  velocidad: 5
-  runSpeed: 6
+  velocidad: 3
+  runSpeed: 5
   groundDistance: 0.1
   jumpSpeed: 3
   gravity: -9.81
