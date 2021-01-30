@@ -20,7 +20,6 @@ public class getVolumenHexagono : MonoBehaviour {
     [Header("Objetos a instanciar")]
     public plataformasEstruc[] objetos;
     public GameObject personaje;
-    public camaraPersonaje camara;
 
     private bool personajeHasSpawn = false;
 
@@ -59,8 +58,6 @@ public class getVolumenHexagono : MonoBehaviour {
 
                 if (filaSpawnPlayer == fila && plataformaSpawnPlayer == i) {
                     var personajeGO = Instantiate(personaje, plataforma.transform.position + new Vector3(0,0.2f,0),Quaternion.identity);
-                    personajeGO.GetComponent<primeraPersona>().cameraTransform = camara.transform;
-                    camara.target = personajeGO.transform;
                 }
             }
 
