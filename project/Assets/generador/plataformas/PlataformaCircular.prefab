@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 6423087943222821417}
   - component: {fileID: 243318269918948324}
   - component: {fileID: 5623962580223267675}
-  - component: {fileID: 8323753278837826488}
   m_Layer: 8
   m_Name: centroCilindro
   m_TagString: Untagged
@@ -250,29 +249,13 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5712083291341574811}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0a02545ef2df9a44f9d6d4083eec95d7, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2991624721442492596, guid: 23aae17b3dcf263459c2d112cb612383, type: 3}
---- !u!54 &8323753278837826488
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5712083291341574811}
-  serializedVersion: 2
-  m_Mass: 20000
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 94
-  m_CollisionDetection: 0
 --- !u!1 &7620720757349740961
 GameObject:
   m_ObjectHideFlags: 0
