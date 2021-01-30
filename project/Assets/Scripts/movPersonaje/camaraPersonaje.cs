@@ -15,11 +15,5 @@ public class camaraPersonaje : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, target.position + offset, lerpValue);
         offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * sensibilidad, Vector3.up)* offset;
         transform.LookAt(target);
-
-
-        if (target) {
-            Debug.Log("Player visible: " + target.GetComponentInChildren<Renderer>().isVisible);
-        }
-
     }
 }

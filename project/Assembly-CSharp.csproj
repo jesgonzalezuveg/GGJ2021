@@ -58,9 +58,9 @@
     <Compile Include="Assets\Scripts\movPersonaje\camaraPersonaje.cs" />
     <Compile Include="Assets\Scripts\General\vida.cs" />
     <Compile Include="Assets\Scripts\menu\menuManager.cs" />
+    <Compile Include="Assets\Scripts\generadorNiveles\plataformasEstruc.cs" />
     <Compile Include="Assets\Scripts\generadorNiveles\playerController.cs" />
     <Compile Include="Assets\Scripts\generadorNiveles\getVolumenHexagono.cs" />
-    <Compile Include="Assets\Scripts\generadorNiveles\plataformasEstruc.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

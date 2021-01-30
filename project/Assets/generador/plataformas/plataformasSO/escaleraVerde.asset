@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbe521bb2902e77429b4e094d1f8b6e5, type: 3}
-  m_Name: circular
+  m_Name: escaleraVerde
   m_EditorClassIdentifier: 
-  dimension: {x: 6.2, y: 1.25, z: 6.2}
-  prefab: {fileID: 7792208927576097832, guid: f633f9d7affee514aa95c01126eac63e, type: 3}
+  dimension: {x: 1, y: 0.3, z: 1}
+  prefab: {fileID: 8931984953449194709, guid: 9b6af11a748122c42a919d2120b2889e, type: 3}

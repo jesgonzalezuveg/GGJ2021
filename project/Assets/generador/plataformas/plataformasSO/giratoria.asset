@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbe521bb2902e77429b4e094d1f8b6e5, type: 3}
-  m_Name: New Plataformas Estruc
+  m_Name: giratoria
   m_EditorClassIdentifier: 
-  dimension: {x: 0, y: 0, z: 0}
-  prefab: {fileID: 0}
+  dimension: {x: 7.2, y: 2, z: 7.2}
+  prefab: {fileID: 3038881423427491938, guid: e9c17023344645e4c8ed4de5027d2ea3, type: 3}

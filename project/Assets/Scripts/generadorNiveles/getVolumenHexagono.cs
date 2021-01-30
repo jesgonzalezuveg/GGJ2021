@@ -41,7 +41,7 @@ public class getVolumenHexagono : MonoBehaviour {
 
         int filaSpawnPlayer = Random.Range(1, Mathf.RoundToInt(altura));
 
-        for (int fila = 1; fila <= Mathf.RoundToInt(altura) ; fila++) {
+        for (int fila = 1; fila <= Mathf.RoundToInt(altura); fila++) {
             var objetosFila = new GameObject("ObjetosFila" + fila);
             objetosFila.transform.SetParent(objetosFigura.transform);
             objetosFila.transform.position = new Vector3(0, puntosClave.transform.position.y, 0);
@@ -127,15 +127,18 @@ public class getVolumenHexagono : MonoBehaviour {
         RaycastHit hit;
         Ray ray = new Ray(randomPoint, Vector3.down);
 
-        var randomObj = objetos[Random.Range(0, objetos.Length)];
-
-        Debug.Log(Physics.CheckSphere(randomPoint, randomObj.dimension.x));
-
         if (Physics.Raycast(ray, out hit, 1000)) {
-            GameObject newObj = Instantiate(randomObj.prefab, new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), Quaternion.identity); //spawn & parent
-            newObj.transform.SetParent(objeto.transform);
 
-            return newObj;
+            var randomObj = objetos[Random.Range(0, objetos.Length)];
+
+            if (Physics.OverlapBox(new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), randomObj.dimension / 2).Length > 2) {
+                return null;
+            } else {
+                GameObject newObj = Instantiate(randomObj.prefab, new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), Quaternion.identity); //spawn & parent
+                newObj.transform.SetParent(objeto.transform);
+
+                return newObj;
+            }
         }
         return null;
     }
