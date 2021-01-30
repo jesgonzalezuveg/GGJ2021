@@ -102,7 +102,6 @@ public class getVolumenHexagono : MonoBehaviour {
     private void Update() {
         if (Input.GetMouseButtonDown(0)) {
             objetoInstanciadoRaro = cosaNueva(plataformaRaraEsta);
-            Debug.Log(objetoInstanciadoRaro);
         }
     }
 

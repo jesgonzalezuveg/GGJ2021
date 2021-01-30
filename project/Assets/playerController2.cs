@@ -86,8 +86,4 @@ public class playerController2 : MonoBehaviour{
 
     }
 
-    private void OnDrawGizmos() {
-        Gizmos.DrawCube(groundCheck.position, new Vector3(0.4f, 0.2f, 0.4f));
-    }
-
 }

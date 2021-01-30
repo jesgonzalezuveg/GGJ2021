@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class vida : MonoBehaviour
 {
@@ -32,75 +33,68 @@ public class vida : MonoBehaviour
             gameOver.SetActive(true);
         }
     }
-    private void OnTriggerStay(Collider objeto) 
-    {
+
+    bool banderaCorrutina = false;
+
+    private void OnTriggerStay(Collider objeto) {
         if (objeto.tag=="trampa")
         {
             
             var sonido = objeto.GetComponentInChildren<AudioSource>();
             
             var animatorTrampa1 = objeto.GetComponentsInChildren<Animator>();
-            foreach (var item in animatorTrampa1)
-            {
+            foreach (var item in animatorTrampa1){
                 item.SetBool("itsATrap", true);
             }
+
             var colision = objeto.GetComponentsInChildren<Collider>();
-            reloj(colision, sonido);
-            
-        }
-    }
-    private void OnTriggerEnter(Collider objeto) 
-    {
-        if (objeto.tag=="trampa")
-        {
-            reproductor.Play();
-        }
-        timerTrampa=1;
-        if (objeto.tag=="sueloMuerte")
-        {
-            
-            salud=salud-1;
-            transform.position = generador.spawnPoint;
-            tiempoDano=Time.time+1;
+
+            //reloj(colision, sonido);
+            if (!banderaCorrutina) {
+                StartCoroutine(checaTrampa(objeto.gameObject, sonido));
+                banderaCorrutina = true;
+            }
         }
     }
 
-    private void OnTriggerExit(Collider objeto) 
+    private void OnTriggerEnter(Collider objeto) 
     {
+        if (objeto.tag=="trampa"){
+            reproductor.Play();
+        }
+
         timerTrampa=1;
-    }
-    //CONTADORTRAMPA
-    void reloj(Collider[] colision, AudioSource sonido)
-    {
-        if(timerTrampa<=1&&timerTrampa>=0)
-        {
-            timerTrampa-=Time.deltaTime;   
-        }  
-        if(timerTrampa<0)
-        {
-            if(Time.time>=tiempoDano){
-            
-            
+        if (objeto.tag=="sueloMuerte"){
             salud=salud-1;
             transform.position = generador.spawnPoint;
-            tiempoDano=Time.time+1;
-            reproductor.Pause();
-            sonido.Play();
-            
-            foreach (var item in colision)
-            {
-                if (item.isTrigger)
-                {
-                    item.enabled=false;
-                }
+            tiempoDano = Time.time+1;
+        }
+
+        if (objeto.tag == "ganar") {
+            SceneManager.LoadScene("Inicio");
+        }
+    }
+
+    private void OnTriggerExit(Collider objeto) {
+
+    }
+    //CONTADORTRAMPA
+
+    IEnumerator checaTrampa(GameObject trampa, AudioSource sonido) {
+        yield return new WaitForSeconds(1f);
+
+        if (trampa.GetComponentInChildren<trampaDetect>().checaDmg()) {
+            salud = salud - 1;
+            transform.position = generador.spawnPoint;
+        }
+
+        reproductor.Pause();
+        sonido.Play();
+        foreach (var item in trampa.GetComponentsInChildren<Collider>()) {
+            if (item.isTrigger) {
+                item.enabled = false;
             }
         }
-        }   
-        if(timerTrampa<-1)
-        {
-            timerTrampa=4;
-        }  
-        
-    }
-    
+        banderaCorrutina = false;
+    }    
 }
