@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\generadorNiveles\plataformasEstruc.cs" />
      <Compile Include="Assets\Scripts\generadorNiveles\playerController.cs" />
      <Compile Include="Assets\Scripts\generadorNiveles\getVolumenHexagono.cs" />
+     <Compile Include="Assets\activar.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

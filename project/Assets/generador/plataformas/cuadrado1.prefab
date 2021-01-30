@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &8989056022953561701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232243600805422888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.019999996, z: 0.019999996}
+  m_Center: {x: 4.0745363e-10, y: 2.237357e-10, z: 4.656613e-10}
 --- !u!1 &5791168031070801555
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +22,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6135322299605428460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cuadrado1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,9 +51,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6135322299605428460}
     m_Modifications:
+    - target: {fileID: 3851188922050537344, guid: 917353d9e1529ee45af3e4d09c1798bf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4712227271290100417, guid: 917353d9e1529ee45af3e4d09c1798bf, type: 3}
       propertyPath: m_Name
       value: plataforma cuadrada 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712227271290100417, guid: 917353d9e1529ee45af3e4d09c1798bf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055356421418817012, guid: 917353d9e1529ee45af3e4d09c1798bf, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5345457266648137851, guid: 917353d9e1529ee45af3e4d09c1798bf, type: 3}
       propertyPath: m_RootOrder
@@ -91,5 +116,10 @@ PrefabInstance:
 --- !u!4 &7945763702822355155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5345457266648137851, guid: 917353d9e1529ee45af3e4d09c1798bf, type: 3}
+  m_PrefabInstance: {fileID: 2624442915429843112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1232243600805422888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3851188922050537344, guid: 917353d9e1529ee45af3e4d09c1798bf, type: 3}
   m_PrefabInstance: {fileID: 2624442915429843112}
   m_PrefabAsset: {fileID: 0}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe521bb2902e77429b4e094d1f8b6e5, type: 3}
   m_Name: trampa2
   m_EditorClassIdentifier: 
-  dimension: {x: 2, y: 0.5, z: 2}
-  prefab: {fileID: 2864424336363118598, guid: 5d092c12468e0584f9b8209a711534a3, type: 3}
+  dimension: {x: 3, y: 1, z: 3}
+  prefab: {fileID: 6037049930754446224, guid: 459213106917f9343805e1f451d33a4c, type: 3}

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6345744301835172926}
   - component: {fileID: 8052233029102810011}
   - component: {fileID: 5213954571785193297}
-  m_Layer: 0
+  - component: {fileID: 2878235304458997970}
+  m_Layer: 8
   m_Name: Plataforma_Cuadrada_2 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2878235304458997970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006478635717387908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019862425, y: 0.01986243, z: 0.024198154}
+  m_Center: {x: 0, y: 0, z: 0.0020990744}
 --- !u!1 &7111870705189643084
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,8 +104,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5291504592565811265}
-  m_Layer: 0
-  m_Name: Base2 1
+  m_Layer: 8
+  m_Name: Base3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

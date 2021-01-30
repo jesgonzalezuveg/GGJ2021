@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class getVolumenHexagono : MonoBehaviour {
 
+    public Vector3 spawnPoint;
+
     [Header("Variables para Volumen")]
     public Transform posApotema;
     public Transform posBase;
@@ -31,7 +33,7 @@ public class getVolumenHexagono : MonoBehaviour {
 
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
 
         foreach (Collider pared in padreParedes.GetComponentsInChildren<Collider>()) {
             pared.enabled = false;
@@ -57,7 +59,7 @@ public class getVolumenHexagono : MonoBehaviour {
 
             int plataformaSpawnPlayer = Random.Range(0,9);
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 20; i++) {
                 GameObject plataforma = null;
 
                 while (plataforma == null) {
@@ -68,6 +70,7 @@ public class getVolumenHexagono : MonoBehaviour {
                 }
 
                 if (filaSpawnPlayer == fila && plataformaSpawnPlayer == i) {
+                    spawnPoint = plataforma.transform.position + new Vector3(0, 0.2f, 0);
                     var personajeGO = Instantiate(personaje, plataforma.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
                 }
             }
@@ -163,16 +166,4 @@ public class getVolumenHexagono : MonoBehaviour {
         }
         return null;
     }
-
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        if (objetoInstanciadoRaro) {
-            Gizmos.DrawWireCube(objetoInstanciadoRaro.transform.position, new Vector3(1.5f, 0.5f, 1.5f));
-        }
-        Gizmos.color = Color.green;
-        if (checadorObj != null) {
-            Gizmos.DrawWireCube(checadorObj, tamanioChecador);
-        }
-    }
-
 }

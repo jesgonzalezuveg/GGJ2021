@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe521bb2902e77429b4e094d1f8b6e5, type: 3}
   m_Name: cuadrado3
   m_EditorClassIdentifier: 
-  dimension: {x: 4, y: 0.5, z: 4}
+  dimension: {x: 4, y: 1, z: 4}
   prefab: {fileID: 4388458841542290899, guid: b64eded7055e82a4fafe62735f60b43f, type: 3}

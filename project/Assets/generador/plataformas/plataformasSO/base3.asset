@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe521bb2902e77429b4e094d1f8b6e5, type: 3}
   m_Name: base3
   m_EditorClassIdentifier: 
-  dimension: {x: 2, y: 0.5, z: 2}
+  dimension: {x: 2.5, y: 1, z: 2.5}
   prefab: {fileID: 7111870705189643084, guid: 821dbf32911892b449bdaf50331fc6df, type: 3}
