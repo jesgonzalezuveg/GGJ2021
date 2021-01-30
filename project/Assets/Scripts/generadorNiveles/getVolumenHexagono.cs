@@ -23,6 +23,12 @@ public class getVolumenHexagono : MonoBehaviour {
 
     private bool personajeHasSpawn = false;
 
+    //Variables de debug de random
+    public GameObject plataformaRaraEsta;
+    public GameObject objetoInstanciadoRaro;
+    public Vector3 checadorObj;
+    public Vector3 tamanioChecador;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -47,6 +53,8 @@ public class getVolumenHexagono : MonoBehaviour {
 
             pintaMesh(objetosFila);
 
+            plataformaRaraEsta = objetosFila;
+
             int plataformaSpawnPlayer = Random.Range(0,9);
 
             for (int i = 0; i < 10; i++) {
@@ -54,10 +62,13 @@ public class getVolumenHexagono : MonoBehaviour {
 
                 while (plataforma == null) {
                     plataforma = cosaNueva(objetosFila);
+                    if (plataforma) {
+                        plataforma.name = "objetoFila" + fila + "Pos" + i;
+                    }
                 }
 
                 if (filaSpawnPlayer == fila && plataformaSpawnPlayer == i) {
-                    var personajeGO = Instantiate(personaje, plataforma.transform.position + new Vector3(0,0.2f,0),Quaternion.identity);
+                    var personajeGO = Instantiate(personaje, plataforma.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
                 }
             }
 
@@ -69,6 +80,9 @@ public class getVolumenHexagono : MonoBehaviour {
 
             for (int i = 0; i < 5; i++) {
                 var plataforma = cosaNueva(objetosFila2);
+                if (plataforma) {
+                    plataforma.name = "objetoFila" + fila + "SubidaPos" + i;
+                }
             }
 
             puntosClave.transform.position += new Vector3(0, 1, 0);
@@ -79,6 +93,13 @@ public class getVolumenHexagono : MonoBehaviour {
 
         foreach (Collider pared in padreParedes.GetComponentsInChildren<Collider>()) {
             pared.enabled = true;
+        }
+    }
+
+    private void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            objetoInstanciadoRaro = cosaNueva(plataformaRaraEsta);
+            Debug.Log(objetoInstanciadoRaro);
         }
     }
 
@@ -128,10 +149,13 @@ public class getVolumenHexagono : MonoBehaviour {
 
             var randomObj = objetos[Random.Range(0, objetos.Length)];
 
-            if (Physics.OverlapBox(new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), randomObj.dimension / 2).Length > 2) {
+            checadorObj = new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z);
+            tamanioChecador = randomObj.dimension;
+
+            if (Physics.OverlapBox(new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), randomObj.dimension / 2).Length > 1) {
                 return null;
             } else {
-                GameObject newObj = Instantiate(randomObj.prefab, new Vector3(ray.origin.x, hit.transform.position.y, ray.origin.z), Quaternion.identity); //spawn & parent
+                GameObject newObj = Instantiate(randomObj.prefab, new Vector3(ray.origin.x, objeto.transform.position.y, ray.origin.z), Quaternion.identity); //spawn & parent
                 newObj.transform.SetParent(objeto.transform);
 
                 return newObj;
@@ -140,8 +164,15 @@ public class getVolumenHexagono : MonoBehaviour {
         return null;
     }
 
-
-
-
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        if (objetoInstanciadoRaro) {
+            Gizmos.DrawWireCube(objetoInstanciadoRaro.transform.position, new Vector3(1.5f, 0.5f, 1.5f));
+        }
+        Gizmos.color = Color.green;
+        if (checadorObj != null) {
+            Gizmos.DrawWireCube(checadorObj, tamanioChecador);
+        }
+    }
 
 }
