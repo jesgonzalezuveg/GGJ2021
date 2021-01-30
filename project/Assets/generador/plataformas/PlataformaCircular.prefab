@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6981165933363412664}
   - component: {fileID: 287960862341328350}
   - component: {fileID: 214596157045216201}
+  - component: {fileID: 1703255795814513509}
+  - component: {fileID: 4144571317456224177}
   m_Layer: 8
   m_Name: centroCUBO
   m_TagString: Untagged
@@ -129,6 +131,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.088849835, y: 0.004578395, z: 0.019999849}
   m_Center: {x: -0.00012078961, y: 0.000024683708, z: 0.10004849}
+--- !u!54 &1703255795814513509
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374022197769761253}
+  serializedVersion: 2
+  m_Mass: 20000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 94
+  m_CollisionDetection: 0
+--- !u!114 &4144571317456224177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374022197769761253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2668350c176bfca4ab98ece7706df552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 1
 --- !u!1 &5712083291341574811
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +172,7 @@ GameObject:
   - component: {fileID: 6423087943222821417}
   - component: {fileID: 243318269918948324}
   - component: {fileID: 5623962580223267675}
+  - component: {fileID: 8323753278837826488}
   m_Layer: 8
   m_Name: centroCilindro
   m_TagString: Untagged
@@ -225,6 +257,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2991624721442492596, guid: 23aae17b3dcf263459c2d112cb612383, type: 3}
+--- !u!54 &8323753278837826488
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712083291341574811}
+  serializedVersion: 2
+  m_Mass: 20000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 94
+  m_CollisionDetection: 0
 --- !u!1 &7620720757349740961
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +292,8 @@ GameObject:
   - component: {fileID: 6504238650374733843}
   - component: {fileID: 5483223033768680518}
   - component: {fileID: 510395339468567154}
+  - component: {fileID: 7830327366050962843}
+  - component: {fileID: 1323603875122171885}
   m_Layer: 8
   m_Name: circulos
   m_TagString: Untagged
@@ -418,6 +468,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020535955, y: 0.020551624, z: 0.019999996}
   m_Center: {x: -0.0010410252, y: -0.042845976, z: -0.0000019075012}
+--- !u!114 &7830327366050962843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620720757349740961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2668350c176bfca4ab98ece7706df552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: -1
+--- !u!54 &1323603875122171885
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620720757349740961}
+  serializedVersion: 2
+  m_Mass: 20000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 94
+  m_CollisionDetection: 0
 --- !u!1 &7792208927576097832
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +506,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7451394770577743506}
-  - component: {fileID: 6981165932856622409}
   m_Layer: 8
   m_Name: PlataformaCircular
   m_TagString: Untagged
@@ -452,22 +530,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6981165932856622409
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7792208927576097832}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a43a4138b37bbe34aa9c37c83e581d32, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
